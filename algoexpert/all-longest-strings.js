@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function solution(inputArray) {
   let result = [];
   let longestInt = 0;
