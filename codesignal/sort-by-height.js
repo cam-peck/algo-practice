@@ -1,7 +1,6 @@
 function solution(a) {
   const people = a.filter(el => el !== -1);
   const sortedPeople = people.sort((a, b) => a - b);
-  console.log(sortedPeople);
   let i = -1;
   return a.map(value => {
     if (value === -1) {
