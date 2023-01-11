@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function solution(inputString) {
   const splitInputString = inputString.split('.');
   const abcRegex = /[A-Za-z]/;

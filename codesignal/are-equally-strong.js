@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function solution(yL, yR, fL, fR) {
   if (yL === yR) {
     if (yL === fL && yR === fR) {

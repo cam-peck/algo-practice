@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function solution(inputArray) {
   let result = -Infinity;
   for (let i = 0; i < inputArray.length - 1; i++) {
@@ -11,8 +12,6 @@ function solution(inputArray) {
 
 // input: array of numbers (-15 -> +15)
 // output: number (max difference)
-
-10, 1, -10, 2, 1, -1, 0, 1;
 
 // initialize result at -infinity
 // loop through input array -- for each iteration...

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function solution(inputArr) {
   let counter = 0;
   for (let i = 0; i < inputArr.length - 1; i++) {
