@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 class Node {
   constructor(val) {
     this.val = val;
@@ -24,16 +25,33 @@ class SinglyLinkedList {
     return this;
   }
 
-  // pop(val) {
-
-  // }
+  pop() {
+    if (!this.head) return undefined; // no list
+    let current = this.head;
+    let newTail = current;
+    while (current.next) { // traverse to the node before the end
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
 
 }
 
 const list = new SinglyLinkedList();
 
 list.push('Hi there!');
-
 list.push('How are you?');
-
 list.push('Im fine');
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list);
+console.log(list.pop());
