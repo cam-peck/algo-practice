@@ -43,6 +43,15 @@ class SinglyLinkedList {
     return current;
   }
 
+  shift() {
+    if (!this.head) return undefined;
+    const oldHead = this.head;
+    const newHead = this.head.next;
+    this.head = newHead;
+    this.length--;
+    return oldHead;
+  }
+
 }
 
 const list = new SinglyLinkedList();
@@ -50,8 +59,8 @@ const list = new SinglyLinkedList();
 list.push('Hi there!');
 list.push('How are you?');
 list.push('Im fine');
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
+console.log('Shift 1: ', list.shift());
+console.log('Shift 2: ', list.shift());
+console.log('Shift 3: ', list.shift());
 console.log(list);
-console.log(list.pop());
+console.log(list.shift());
