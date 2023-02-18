@@ -63,9 +63,9 @@ class SinglyLinkedList {
     } else {
       newNode.next = this.head;
       this.head = newNode;
-      this.length++;
     }
-    return this.head;
+    this.length++;
+    return this;
   }
 
 }
@@ -73,5 +73,6 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 
 console.log(list.unshift('Hi there!'));
+console.log('list', list);
 console.log(list.unshift('How are you?'));
 console.log(list.unshift('Im fine'));
