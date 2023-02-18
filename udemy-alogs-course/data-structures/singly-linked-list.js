@@ -15,9 +15,9 @@ class SinglyLinkedList {
 
   push(val) {
     const node = new Node(val);
-    if (this.head === null) { // list is empty
+    if (this.head === null) {
       this.head = node;
-    } else { // list is longer than one node
+    } else {
       this.tail.next = node;
     }
     this.tail = node;
@@ -26,7 +26,7 @@ class SinglyLinkedList {
   }
 
   pop() {
-    if (!this.head) return undefined; // no list
+    if (!this.head) return undefined;
     let current = this.head;
     let newTail = current;
     while (current.next) { // traverse to the node before the end
@@ -49,18 +49,29 @@ class SinglyLinkedList {
     const newHead = this.head.next;
     this.head = newHead;
     this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
     return oldHead;
+  }
+
+  unshift(val) {
+    const newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+      this.length++;
+    }
+    return this.head;
   }
 
 }
 
 const list = new SinglyLinkedList();
 
-list.push('Hi there!');
-list.push('How are you?');
-list.push('Im fine');
-console.log('Shift 1: ', list.shift());
-console.log('Shift 2: ', list.shift());
-console.log('Shift 3: ', list.shift());
-console.log(list);
-console.log(list.shift());
+console.log(list.unshift('Hi there!'));
+console.log(list.unshift('How are you?'));
+console.log(list.unshift('Im fine'));
