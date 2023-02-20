@@ -77,6 +77,13 @@ class SinglyLinkedList {
     return current;
   }
 
+  set(index, value) {
+    const node = this.get(index);
+    if (!node) return false;
+    node.val = value;
+    return true;
+  }
+
 }
 
 const list = new SinglyLinkedList();
@@ -85,4 +92,5 @@ list.push('Hi there!');
 list.push('How are you?');
 list.push('Im fine');
 
-console.log(list.get(3));
+console.log(list.set(0, 'Howdy!'));
+console.log(list);
