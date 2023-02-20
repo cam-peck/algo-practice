@@ -68,19 +68,32 @@ class SinglyLinkedList {
     return this;
   }
 
-  get(index) {
-    if (index < 0 || index >= this.length) return null;
+  get(idx) {
+    if (idx < 0 || idx >= this.length) return null;
     let current = this.head;
-    for (let i = 0; i < index; i++) {
+    for (let i = 0; i < idx; i++) {
       current = current.next;
     }
     return current;
   }
 
-  set(index, value) {
-    const node = this.get(index);
+  set(idx, val) {
+    const node = this.get(idx);
     if (!node) return false;
-    node.val = value;
+    node.val = val;
+    return true;
+  }
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.length) return false;
+    if (idx === this.length) return !!list.push(val);
+    if (idx === 0) return !!list.unshift(val);
+    const newNode = new Node(val);
+    const nodeBefore = this.get(idx - 1);
+    const nodesAfter = nodeBefore.next;
+    nodeBefore.next = newNode;
+    newNode.next = nodesAfter;
+    this.length++;
     return true;
   }
 
@@ -92,5 +105,5 @@ list.push('Hi there!');
 list.push('How are you?');
 list.push('Im fine');
 
-console.log(list.set(0, 'Howdy!'));
+console.log(list.insert(-1, 'Howdy!'));
 console.log(list);
